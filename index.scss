@@ -1,0 +1,82 @@
+$main-color: hsl(314, 27%, 27%);
+$light-color:aliceblue;
+$max-width: 90%;
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+body {
+    font-family: 'helvetica neue', 'sans-serif' !important;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 50px;
+}
+
+.header {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background-color: $main-color;
+}
+
+.header .title {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    max-width: $max-width;
+    color: $light-color;
+}
+
+.footer {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    background-color: $main-color;
+}
+
+.footer .copyright {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    font-size: 12px;
+    justify-self: center;
+    width: 100%;
+    max-width: $max-width;
+    color: $light-color;
+}
+
+.content {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-color: $light-color;
+}
+
+.content .section {
+    width: 100%;
+    margin: 10px auto;
+    max-width: $max-width;
+}
+
+.content .section.gridfill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+}
+
+.placeholder {
+    min-width: 200px;
+    min-height: 200px;
+    position: relative;
+    border: 1px solid gray;
+}
